@@ -1,0 +1,4 @@
+DEFAULT_BROWSER_NAME = "chrome"
+DEFAULT_BROWSER_VERSION = "128.0"
+DEFAULT_SELENOID_URL = "selenoid.autotests.cloud"
+USE_SELENOID = True
