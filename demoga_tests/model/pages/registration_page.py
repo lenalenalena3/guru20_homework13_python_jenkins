@@ -64,12 +64,12 @@ class RegistrationPage:
 
     @allure.step("Заполнить subjects")
     def _set_subjects(self, value):
+        browser.driver.execute_script("arguments[0].scrollIntoView(true);", self._submit_button.locate())
         self._subjects.set_value(value)
         self._subjects_elements.element_by(have.text(value)).click()
 
     @allure.step("Выбрать hobbies")
     def _set_checkbox_hobbies(self, value):
-        browser.driver.execute_script("arguments[0].scrollIntoView(true);", browser.element('#hobbiesWrapper').locate())
         self._hobbies.element_by(have.text(value)).click()
 
     @allure.step("Загрузить picture")
@@ -82,7 +82,7 @@ class RegistrationPage:
 
     @allure.step("Заполнить state")
     def _set_state(self, value):
-        browser.driver.execute_script("arguments[0].scrollIntoView(true);", self._state.locate())
+       # browser.driver.execute_script("arguments[0].scrollIntoView(true);", self._state.locate())
         self._state.click()
         self._state_elements.element_by(have.text(value)).click()
 
